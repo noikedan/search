@@ -44,9 +44,8 @@ public class TaskController {
         String lmt = requestParams.get("lmt");
         System.out.println(lmt);
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        Boolean status = false;
         int id = 0;
-        Task t = new Task(id, status, title, dateFormat.parse(lmt));
+        Task t = new Task(id, false, title, dateFormat.parse(lmt));
         taskMapper.add(t);
         return "add";
     }
