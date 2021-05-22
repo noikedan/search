@@ -1,6 +1,8 @@
 package com.example.search.domains;
 
 import java.util.Date;
+
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -15,10 +17,12 @@ public class TaskForm {
 
 	private int id;
 	private boolean status;
-	@NotBlank(message="必須項目です")
-	@Size(min=3, message="2文字以上入力してください")
+//	@NotBlank(message="必須項目です")
+	@NotBlank
+//	@Size(min=3, message="2文字以上入力してください")
+	@Min(3)
 	private String title;
-	@NotNull(message="必須項目です")
+	@NotNull
 	@DateTimeFormat(iso = ISO.DATE)
 	private Date lmt;
 }
